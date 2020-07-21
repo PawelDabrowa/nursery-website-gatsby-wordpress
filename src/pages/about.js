@@ -5,7 +5,6 @@ class PageTemplate extends Component {
 
         const currentPage = this.props.data.wordpressPage
 
-        console.log(currentPage)
 
         return (
             <div>
@@ -20,11 +19,11 @@ class PageTemplate extends Component {
 
 export default PageTemplate
 
-export const pageQuery = graphql`
-    query currentPageQuery($id: String!) {
-        wordpressPage(id: { eq: $id }) {
-            title
-            content
-        }
+export const pageQueryAbout = graphql`
+    query PageQuery {
+        wordpressPage {
+        title
+        content
+      }
     }
 `
